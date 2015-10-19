@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>gofer-db</title>
+		<script src="gofer-db.js"></script>
+	</head>
+	
+	<body>		
+		<script>
+		
+			var ddls=[{objectStore:"book",keyPath:"id"}];
+			
+			var db = new WebDatabase({
+				databaseName:"gofer",
+				ddls:ddls
+			});
+			db.open(function(){
+			//	db.drop();
+				
+				// insert into database
+				var object = {name:"book", properties:{id:1,title:"JavaScript", year:"1995",publisherId:1}};
+				db.insert(object);
+				
+				var object = {name:"book", properties:{id:2,title:"Java", year:"1992",publisherId:1}};
+				db.insert(object);
+			});
+			
+		</script>	
+	</body>
+</html>
