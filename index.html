@@ -7,7 +7,11 @@
 	<body>		
 		<script>
 		
-			var ddls=[{objectStore:"book",keyPath:"id"}];
+			var ddls=[
+				{objectStore:"book",keyPath:"id"},
+				{objectStore:"author",keyPath:"id"},
+				{objectStore:"publisher", keyPath:"id"}
+			];
 			
 			var db = new WebDatabase({
 				databaseName:"gofer",
@@ -21,6 +25,12 @@
 				db.insert(object);
 				
 				var object = {name:"book", properties:{id:2,title:"Java", year:"1992",publisherId:1}};
+				db.insert(object);
+				
+				var object = {name:"author", properties:{id:1,name:"Ion"}};
+				db.insert(object);
+				
+				var object = {name:"publisher", properties:{id:1,name:"Teora"}};
 				db.insert(object);
 			});
 			

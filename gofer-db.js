@@ -36,7 +36,7 @@ function WebDatabase(config){
 	this.drop = function(callback){
 		console.log("try to drop database");	
 		db.close(); // explicit close the database
-		var request = indexedDB.deleteDatabase(this.databaseName);
+		var request = indexedDB.deleteDatabase(databaseName);
 		request.onsuccess = function(e){
 			console.log("success: drop database");	
 			if (callback){
